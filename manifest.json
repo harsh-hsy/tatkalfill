@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "TatkalFill",
+  "short_name": "TatkalFill",
+  "version": "3.0.3",
+  "description": "Fast. Simple. Ready to Book.",
+  "permissions": ["storage", "activeTab", "tabs", "scripting"],
+  "host_permissions": ["*://*.irctc.co.in/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "TatkalFill — Fast. Simple. Ready to Book.",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.irctc.co.in/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TatkalFill</title>
+    <!-- Link to your custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./popup.css" />
+  </head>
+  <body class="text-slate-200 p-4">
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5"/><path d="M18.5 9A7 7 0 0 0 6.2 6.2L4 8m16 8-2.2 1.8A7 7 0 0 1 5.5 15"/></symbol>
+      <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6l8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h3a3 3 0 0 0 3-3V9a3 3 0 0 1 3-3"/></symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
+      <symbol id="icon-sliders" viewBox="0 0 24 24"><path d="M4 6h6M14 6h6M4 12h2M10 12h10M4 18h10M18 18h2"/><circle cx="12" cy="6" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="16" cy="18" r="2"/></symbol>
+      <symbol id="icon-save" viewBox="0 0 24 24"><path d="M5 3h12l3 3v15H4V4a1 1 0 0 1 1-1Z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></symbol>
+      <symbol id="icon-reset" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M5.5 15a8 8 0 1 0 1-8.5L4 10"/></symbol>
+      <symbol id="icon-bolt" viewBox="0 0 24 24"><path d="m13 2-8 12h7l-1 8 8-12h-7l1-8Z"/></symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    </svg>
+    <!-- Header Section -->
+    <header
+      class="flex items-center justify-between pb-3 mb-3 border-b border-slate-700"
+    >
+      <div class="brand-block">
+        <img class="brand-icon" src="./images/icon48.png" alt="" aria-hidden="true" />
+        <div class="brand-copy">
+          <h1>TatkalFill</h1>
+          <p class="brand-tagline">Fast. Simple. Ready to Book.</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="clock-row">
+          <div id="liveClock" class="live-clock" aria-label="Current time">--:--:--</div>
+          <button id="reloadPopupButton" class="reload-popup-button" type="button" aria-label="Reload extension popup" title="Reload popup">
+            <svg class="ui-icon" aria-hidden="true"><use href="#icon-refresh"></use></svg>
+          </button>
+        </div>
+        <div id="status" class="text-xs font-medium px-2 py-1 rounded"></div>
+      </div>
+    </header>
+
+    <!-- Main scrollable area -->
+    <main class="max-h-[500px] overflow-y-auto pr-2">
+      <!-- IRCTC Login Section -->
+      <div class="bg-slate-800 p-4 rounded-lg mb-4 shadow-md">
+        <h2
+          class="text-lg font-semibold text-white mb-3 flex items-center gap-2"
+        >
+          <svg class="ui-icon" aria-hidden="true"><use href="#icon-lock"></use></svg>IRCTC Login
+        </h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="irctcUsername" class="block text-xs font-medium text-slate-400 mb-1">User Name</label>
+            <input
+              type="text"
+              id="irctcUsername"
+              autocomplete="username"
+              placeholder="IRCTC user name"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label for="irctcPassword" class="block text-xs font-medium text-slate-400 mb-1">Password</label>
+            <input
+              type="password"
+              id="irctcPassword"
+              autocomplete="current-password"
+              placeholder="IRCTC password"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+          </div>
+        </div>
+        <p class="login-storage-note"><svg class="ui-icon" aria-hidden="true"><use href="#icon-shield"></use></svg>Password is kept only for this browser session and is cleared when the browser closes.</p>
+      </div>
+
+      <!-- Journey Details Section -->
+      <div class="bg-slate-800 p-4 rounded-lg mb-4 shadow-md">
+        <h2
+          class="text-lg font-semibold text-white mb-3 flex items-center gap-2"
+        >
+          <svg class="ui-icon" aria-hidden="true"><use href="#icon-route"></use></svg>Journey Details
+        </h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label
+              for="fromStation"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >From Station (Code)</label
+            ><input
+              type="text"
+              id="fromStation"
+              placeholder="e.g., CNB"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              formcontrolname="origin"
+            />
+          </div>
+          <div>
+            <label
+              for="toStation"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >To Station (Code)</label
+            ><input
+              type="text"
+              id="toStation"
+              placeholder="e.g., NDLS"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              formcontrolname="destination"
+            />
+          </div>
+          <div>
+            <label
+              for="journeyDate"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >Journey Date</label
+            ><div class="date-picker-field">
+              <input
+                type="text"
+                id="journeyDate"
+                placeholder="DD/MM/YYYY"
+                readonly
+                aria-label="Journey Date DD/MM/YYYY"
+                class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm"
+              />
+              <button type="button" id="datePickerButton" aria-label="Choose journey date"><svg class="ui-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg></button>
+              <input type="date" id="journeyDatePicker" tabindex="-1" aria-hidden="true" />
+            </div>
+          </div>
+          <div>
+            <label
+              for="trainNumber"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >Train Number (reference)</label
+            ><input
+              type="text"
+              id="trainNumber"
+              placeholder="e.g., 12033"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            />
+          </div>
+          <div class="col-span-1">
+            <label
+              for="class"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >Class</label
+            ><select
+              id="class"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              formcontrolname="journeyClass"
+            >
+              <option value="CC">AC Chair car (CC)</option>
+              <option value="EC">Exec. Chair Car (EC)</option>
+              <option value="SL">Sleeper (SL)</option>
+              <option value="3A">AC 3 Tier (3A)</option>
+              <option value="2A">AC 2 Tier (2A)</option>
+              <option value="1A">AC First Class (1A)</option>
+              <option value="3E">AC 3 Economy (3E)</option>
+              <option value="2S">Second Sitting (2S)</option>
+            </select>
+          </div>
+          <div class="col-span-1">
+            <label
+              for="quota"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >Quota</label
+            ><select
+              id="quota"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              formcontrolname="journeyQuota"
+            >
+              <option value="TQ">TATKAL</option>
+              <option value="GN">GENERAL</option>
+              <option value="PT">PREMIUM TATKAL</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="passenger-details"></div>
+      <p class="berth-policy-note"><strong>Berth preference:</strong> Please select a preference for each passenger. If left as No preference, IRCTC will use the saved passenger preference when available. Maximum limits per ticket: Lower for 2 passengers and Side Lower for 1 passenger. Exceeding these limits causes an IRCTC validation error.</p>
+
+      <div class="bg-slate-800 p-4 rounded-lg mb-4 shadow-md">
+        <h2
+          class="text-lg font-semibold text-white mb-3 flex items-center gap-2"
+        >
+          <svg class="ui-icon" aria-hidden="true"><use href="#icon-sliders"></use></svg>Other Preferences
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <input
+              id="autoUpgradation"
+              type="checkbox"
+              class="h-4 w-4 mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              formcontrolname="autoUpgradationSelected"
+            /><label
+              for="autoUpgradation"
+              class="ml-3 block text-sm font-medium text-slate-300"
+              >Consider for Auto Upgradation</label
+            >
+          </div>
+          <div class="flex items-start">
+            <input
+              id="bookOnlyIfConfirmed"
+              type="checkbox"
+              class="h-4 w-4 mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+            /><label
+              for="bookOnlyIfConfirmed"
+              class="ml-3 block text-sm font-medium text-slate-300"
+              formcontrolname="bookOnlyIfCnf"
+              >Book only if confirm berths are allotted</label
+            >
+          </div>
+          <div>
+            <label
+              for="coachNumber"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >Preferred Coach No.</label
+            ><input
+              type="text"
+              id="coachNumber"
+              placeholder="e.g., B11"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              formcontrolname="coachId"
+            />
+          </div>
+          <div>
+            <label
+              for="mobileNumber"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >Mobile Number</label
+            ><input
+              type="text"
+              id="mobileNumber"
+              placeholder="10-digit mobile number"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              formcontrolname="mobileNumber"
+            />
+          </div>
+          <div>
+            <label
+              for="paymentMode"
+              class="block text-xs font-medium text-slate-400 mb-1"
+              >Payment Mode</label
+            ><select
+              id="paymentMode"
+              class="w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              formcontrolname="paymentType"
+            >
+              <option value="UPI">Pay through BHIM/UPI</option>
+              <option value="CCDC">Pay through Credit/Debit Cards</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Action Buttons Footer -->
+    <footer class="pt-3 border-t border-slate-700">
+      <p class="safety-note">Search and matching train selection are assisted. CAPTCHA, final review, OTP and payment confirmation remain manual.</p>
+      <div class="grid grid-cols-3 gap-2">
+        <button
+          id="saveButton"
+          class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md transition-all duration-200"
+        >
+          <svg class="ui-icon" aria-hidden="true"><use href="#icon-save"></use></svg>Save
+        </button>
+        <button
+          id="clearButton"
+          class="w-full flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-md transition-all duration-200"
+        >
+          <svg class="ui-icon" aria-hidden="true"><use href="#icon-reset"></use></svg>Reset
+        </button>
+        <button
+          id="bookButton"
+          class="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-md transition-all duration-200"
+        >
+          <svg class="ui-icon" aria-hidden="true"><use href="#icon-bolt"></use></svg>Book
+        </button>
+      </div>
+    </footer>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>
