@@ -1,0 +1,56 @@
+name: Build latest extension download
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "extension/**"
+      - ".github/workflows/release-extension.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tatkalfill-latest-release
+  cancel-in-progress: true
+
+jobs:
+  package-and-release:
+    name: Package and publish latest ZIP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Build extension ZIP
+        shell: bash
+        run: |
+          cd extension
+          zip -r ../TatkalFill.zip . -x "*.DS_Store" -x "__MACOSX/*"
+          cd ..
+          unzip -t TatkalFill.zip
+
+      - name: Publish rolling latest release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: tatkalfill-latest
+          ASSET_NAME: TatkalFill.zip
+        run: |
+          VERSION=$(jq -r '.version' extension/manifest.json)
+          git tag --force "$RELEASE_TAG" "$GITHUB_SHA"
+          git push origin "refs/tags/$RELEASE_TAG" --force
+
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" "$ASSET_NAME" --clobber
+            gh release edit "$RELEASE_TAG" \
+              --title "TatkalFill v$VERSION" \
+              --notes "Automatically packaged from extension/ at commit $GITHUB_SHA."
+          else
+            gh release create "$RELEASE_TAG" "$ASSET_NAME" \
+              --title "TatkalFill v$VERSION" \
+              --notes "Automatically packaged from extension/ at commit $GITHUB_SHA."
+          fi

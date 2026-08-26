@@ -19,7 +19,7 @@ tatkal-fill/
 
 ## Install the extension
 
-1. Download `website/downloads/TatkalFill.zip` or clone this repository.
+1. Download the automatically packaged [latest TatkalFill ZIP](https://github.com/harsh-hsy/tatkalfill/releases/download/tatkalfill-latest/TatkalFill.zip) or clone this repository.
 2. Extract the ZIP if you downloaded it.
 3. Open `chrome://extensions` (or `edge://extensions`).
 4. Enable **Developer mode**.
@@ -45,6 +45,10 @@ Refreshing an already completed page does not run autofill again. A new workflow
 ## Run the website
 
 The landing page is a dependency-free static website. Open `website/index.html` directly or serve `website/` with any static HTTP server.
+
+## Automatic download package
+
+When a change inside `extension/` is pushed to `main`, the `Build latest extension download` GitHub Actions workflow packages the extension contents and replaces the `TatkalFill.zip` asset in the rolling `tatkalfill-latest` release. Every website download button uses that stable release URL, so no website edit is required for future extension updates.
 
 ## License
 
