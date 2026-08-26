@@ -26,6 +26,14 @@ tatkal-fill/
 5. Choose **Load unpacked** and select the extracted `extension` folder.
 6. Pin TatkalFill, enter your details, and click **Save** or **Book**.
 
+## Correct usage flow
+
+1. Fill login, journey and passenger details in the extension and press **Save**.
+2. Open or reload `https://www.irctc.co.in/nget/train-search`.
+3. Open TatkalFill on that IRCTC tab and press **Book**.
+4. If IRCTC shows the language dialog, choose English or Hindi. If the language was already chosen, the workflow continues directly.
+5. TatkalFill fills supported stages and opens Review Booking. CAPTCHA, OTP, final review and payment remain manual.
+
 ## Extension behavior
 
 **Book** starts a time-limited, page-by-page booking session. It fills the journey page, searches trains, selects the saved train number/class/date availability, handles the IRCTC login modal, fills the passenger page, selects the saved payment mode, and opens Review Booking through IRCTC's Continue button. CAPTCHA, final review, OTP, and payment confirmation remain manual.

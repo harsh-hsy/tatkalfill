@@ -991,6 +991,80 @@ select {
   font-weight: 800;
 }
 
+.use-workflow {
+  position: relative;
+  z-index: 1;
+  margin-top: 54px;
+  padding: 32px;
+  border: 1px solid rgba(177, 205, 241, 0.18);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.use-workflow-heading {
+  max-width: 660px;
+  margin-bottom: 28px;
+}
+
+.use-workflow-heading .section-kicker {
+  color: var(--gold);
+}
+
+.use-workflow-heading h3 {
+  margin: 10px 0 8px;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.use-workflow-heading p {
+  margin: 0;
+  color: #a9bfdd;
+  font-size: 13px;
+}
+
+.use-workflow ol {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  list-style: none;
+}
+
+.use-workflow li {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(177, 205, 241, 0.14);
+  border-radius: 15px;
+  background: rgba(8, 28, 63, 0.5);
+}
+
+.use-workflow li > span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  color: var(--navy-deep);
+  background: var(--gold);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.use-workflow b {
+  display: block;
+  font-size: 13px;
+}
+
+.use-workflow li p {
+  margin: 6px 0 0;
+  color: #9eb5d5;
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
 .control-section {
   background:
     linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)),
@@ -1445,6 +1519,10 @@ select {
     grid-template-columns: 1fr;
   }
 
+  .use-workflow ol {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .control-copy {
     order: -1;
   }
@@ -1570,6 +1648,14 @@ select {
     grid-template-columns: 1fr;
   }
 
+  .use-workflow {
+    padding: 24px;
+  }
+
+  .use-workflow ol {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .feature-card-large {
     grid-column: auto;
     min-height: 560px;
@@ -1669,6 +1755,20 @@ select {
   .feature-card,
   .step-card {
     padding: 22px;
+  }
+
+  .use-workflow ol {
+    grid-template-columns: 1fr;
+  }
+
+  .use-workflow li {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+  }
+
+  .use-workflow li > span {
+    margin: 0;
   }
 
   .passenger-stack {

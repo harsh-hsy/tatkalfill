@@ -228,7 +228,19 @@
   }
 
   async function fillSearch(data) {
-    await waitFor(() => document.querySelector('p-autocomplete[formcontrolname="origin"]'));
+    const searchFormReady = await waitFor(() => {
+      const originControl = document.querySelector('p-autocomplete[formcontrolname="origin"]');
+      const destinationControl = document.querySelector('p-autocomplete[formcontrolname="destination"]');
+      const dateControl = document.querySelector('p-calendar[formcontrolname="journeyDate"]');
+      return originControl && destinationControl && dateControl && !languageDialogVisible() ? true : null;
+    }, 12000);
+    if (!searchFormReady) return false;
+
+    // When the language dialog has just been dismissed, IRCTC can render the
+    // controls before Angular finishes attaching the search handlers. A small
+    // settle window prevents the first programmatic interaction from locking
+    // the Search Trains button.
+    await sleep(700);
     const origin = await fillStation("origin", data.fromStation);
     const destination = await fillStation("destination", data.toStation);
     const date = await fillCalendarDate(data.journeyDate);
@@ -238,7 +250,10 @@
     const destinationValid = document.querySelector('p-autocomplete[formcontrolname="destination"]')?.classList.contains("ng-valid");
     const dateValid = document.querySelector('p-calendar[formcontrolname="journeyDate"]')?.classList.contains("ng-valid");
     if (!origin || !destination || !date || !journeyClass || !quota || !originValid || !destinationValid || !dateValid) return false;
-    const searchButton = findButton(document, /^(Search|Search Trains)$/i);
+    const searchButton = await waitFor(() => {
+      const button = findButton(document, /^(Search|Search Trains)$/i);
+      return buttonReady(button) ? button : null;
+    }, 5000);
     if (!searchButton) return false;
     return { button: searchButton };
   }
@@ -509,6 +524,28 @@
     return [...root.querySelectorAll("button")].find((button) => visible(button) && pattern.test((button.textContent || "").trim()));
   }
 
+  function buttonReady(button) {
+    return Boolean(button
+      && button.isConnected
+      && visible(button)
+      && !button.disabled
+      && button.getAttribute("aria-disabled") !== "true"
+      && !button.classList.contains("ui-state-disabled")
+      && !button.classList.contains("p-disabled"));
+  }
+
+  async function activateButton(button) {
+    const readyButton = await waitFor(() => buttonReady(button) ? button : null, 5000);
+    if (!readyButton) return false;
+    readyButton.scrollIntoView({ behavior: "smooth", block: "center" });
+    readyButton.focus({ preventScroll: true });
+    await sleep(250);
+    readyButton.dispatchEvent(new MouseEvent("mousedown", { bubbles: true, cancelable: true, view: window }));
+    readyButton.dispatchEvent(new MouseEvent("mouseup", { bubbles: true, cancelable: true, view: window }));
+    readyButton.click();
+    return true;
+  }
+
   async function markStage(session, stage, finish = false) {
     const { bookingSession } = await chrome.storage.local.get("bookingSession");
     if (!bookingSession || bookingSession.id !== session.id) return;
@@ -575,13 +612,16 @@
         if (!result) { showNotice("Journey form could not be completed. Check station/date availability.", true); return; }
         await markStage(bookingSession, stage);
         showNotice("Journey filled. Searching matching trains…");
-        const form = result.button.closest("form");
-        if (form?.requestSubmit) form.requestSubmit(result.button);
-        else result.button.click();
-        const moved = await waitFor(() => getStage() === "train-list" ? true : null, 6000);
+        const submitted = await activateButton(result.button);
+        if (!submitted) {
+          await unmarkStage(bookingSession, stage);
+          showNotice("IRCTC Search Trains is not ready yet. Wait a moment and click Book again.", true);
+          return;
+        }
+        const moved = await waitFor(() => getStage() === "train-list" ? true : null, 20000);
         if (!moved) {
           await unmarkStage(bookingSession, stage);
-          showNotice("IRCTC rejected the search form. Station suggestions were not accepted; click Book to retry.", true);
+          showNotice("IRCTC did not open the train list. Verify the visible fields, then click Book to retry.", true);
         }
       } else if (stage === "train-list") {
         const result = await selectTrain(irctcFormData);
