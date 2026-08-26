@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "TatkalFill",
   "short_name": "TatkalFill",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "Fast. Simple. Ready to Book.",
   "permissions": ["storage", "activeTab", "tabs", "scripting"],
   "host_permissions": ["*://*.irctc.co.in/*"],

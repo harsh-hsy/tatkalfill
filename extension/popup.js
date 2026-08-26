@@ -14,6 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
   window.setInterval(updateClock, 1000);
   document.getElementById("reloadPopupButton").addEventListener("click", () => window.location.reload());
 
+  const passwordInput = document.getElementById("irctcPassword");
+  const passwordToggleButton = document.getElementById("passwordToggleButton");
+  const setPasswordVisibility = (visible) => {
+    passwordInput.type = visible ? "text" : "password";
+    passwordToggleButton.setAttribute("aria-pressed", String(visible));
+    passwordToggleButton.setAttribute("aria-label", visible ? "Hide password" : "Show password");
+    passwordToggleButton.title = visible ? "Hide password" : "Show password";
+  };
+  passwordToggleButton.addEventListener("click", () => {
+    const selectionStart = passwordInput.selectionStart;
+    const selectionEnd = passwordInput.selectionEnd;
+    setPasswordVisibility(passwordInput.type === "password");
+    passwordInput.focus({ preventScroll: true });
+    if (selectionStart !== null && selectionEnd !== null) passwordInput.setSelectionRange(selectionStart, selectionEnd);
+  });
+
   const passengerContainer = document.getElementById("passenger-details");
   const passengerNumbers = [1, 2, 3, 4, 5];
   passengerContainer.innerHTML = passengerNumbers.map((number) => passengerTemplate(number)).join("");
@@ -115,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ]).then(() => {
       document.querySelectorAll("input").forEach((input) => { if (input.type === "checkbox") input.checked = false; else input.value = ""; });
       document.querySelectorAll("select").forEach((select) => { select.selectedIndex = 0; });
+      setPasswordVisibility(false);
       syncBerthAvailability();
       notify("Reset complete");
     }).catch(() => notify("Reset failed", true));
