@@ -11,7 +11,7 @@
     <meta property="og:title" content="TatkalFill — Fast. Simple. Ready to Book." />
     <meta
       property="og:description"
-      content="A lightweight Chrome extension for faster IRCTC Tatkal booking preparation."
+      content="A lightweight Chrome and Edge extension for faster IRCTC Tatkal booking preparation."
     />
     <meta property="og:type" content="website" />
     <title>TatkalFill — Fast. Simple. Ready to Book.</title>
@@ -21,6 +21,28 @@
     <script src="./js/script.js" defer></script>
   </head>
   <body>
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" /></symbol>
+      <symbol id="icon-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6m0-6-9 9M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" /></symbol>
+      <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 6v5h-5M4 18v-5h5M6.1 9a7 7 0 0 1 11.4-2.6L20 11M4 13l2.5 4.6A7 7 0 0 0 17.9 15" /></symbol>
+      <symbol id="icon-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2" /><circle cx="18" cy="5" r="2" /><path d="M8 19h3a3 3 0 0 0 3-3v-8a3 3 0 0 1 3-3" /></symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></symbol>
+      <symbol id="icon-save" viewBox="0 0 24 24"><path d="M5 3h12l2 2v16H5zM8 3v6h8V3M8 21v-7h8v7" /></symbol>
+      <symbol id="icon-zap" viewBox="0 0 24 24"><path d="m13 2-9 12h8l-1 8 9-12h-8z" /></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+      <symbol id="icon-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4m14-1v2a3 3 0 0 1-3 3H3" /></symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5" /></symbol>
+      <symbol id="icon-sliders" viewBox="0 0 24 24"><path d="M4 7h10m4 0h2M4 17h2m4 0h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" /></symbol>
+      <symbol id="icon-box" viewBox="0 0 24 24"><path d="m12 3 8 4-8 4-8-4zM4 7v10l8 4 8-4V7M12 11v10" /></symbol>
+      <symbol id="icon-shield-check" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6z" /><path d="m9 12 2 2 4-4" /></symbol>
+      <symbol id="icon-archive" viewBox="0 0 24 24"><path d="M4 7h16v13H4zM3 3h18v4H3zM9 12h6" /></symbol>
+      <symbol id="icon-browser" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M3 9h18M7 6.5h.01M10 6.5h.01" /></symbol>
+      <symbol id="icon-toggle" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="5" /><circle cx="16" cy="12" r="3" /></symbol>
+      <symbol id="icon-folder-plus" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v11H3zM12 11v6m-3-3h6" /></symbol>
+      <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="icon-edge" viewBox="0 0 24 24"><path d="M20.5 15.5A8.5 8.5 0 1 1 12 3.5c4.5 0 8 3.3 8.5 7.5H8.8c.6-2 2.3-3.2 4.7-3.2 2.1 0 3.8.8 5 2.1" /><path d="M8.8 11c-.4 4.2 2.4 7 6.2 7 2 0 3.7-.6 5-1.8" /></symbol>
+      <symbol id="icon-chrome" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3.5" /><path d="M12 3h7.8M4.2 7.5l3.9 6.8M9.4 21l3.9-6.8" /></symbol>
+    </svg>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header" data-header>
@@ -59,7 +81,7 @@
         <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <div class="eyebrow"><span></span> Chrome extension for IRCTC booking preparation</div>
+            <div class="eyebrow"><span></span> Chrome &amp; Edge extension for IRCTC booking preparation</div>
             <h1>Be ready when every <em>second</em> matters.</h1>
             <p class="hero-tagline">Fast. Simple. Ready to Book.</p>
             <p class="hero-description">
@@ -68,7 +90,7 @@
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="./downloads/TatkalFill.zip" download>
-                <span aria-hidden="true">↓</span> Download Extension
+                <svg class="icon" aria-hidden="true"><use href="#icon-download" /></svg> Download Extension
               </a>
               <a
                 class="button button-secondary"
@@ -76,12 +98,17 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View on GitHub <span aria-hidden="true">↗</span>
+                View on GitHub <svg class="icon" aria-hidden="true"><use href="#icon-external-link" /></svg>
               </a>
             </div>
             <div class="hero-note">
               <span class="status-dot" aria-hidden="true"></span>
-              Currently installed manually through Chrome Developer Mode
+              Currently installed manually through Chrome or Edge Developer Mode
+            </div>
+            <div class="browser-support" aria-label="Supported browsers">
+              <span>Works with</span>
+              <strong><svg class="icon" aria-hidden="true"><use href="#icon-chrome" /></svg> Google Chrome</strong>
+              <strong><svg class="icon" aria-hidden="true"><use href="#icon-edge" /></svg> Microsoft Edge</strong>
             </div>
           </div>
 
@@ -94,11 +121,11 @@
                   <img src="./images/logo.png" alt="" width="38" height="38" />
                   <span><strong>TatkalFill</strong><small>Fast. Simple. Ready to Book.</small></span>
                 </div>
-                <div class="extension-time">10:00:00 <span>↻</span></div>
+                <div class="extension-time">10:00:00 <span><svg class="icon" aria-hidden="true"><use href="#icon-refresh" /></svg></span></div>
               </div>
               <div class="extension-body">
                 <div class="preview-card">
-                  <div class="preview-heading"><span>↗</span> Journey Details</div>
+                  <div class="preview-heading"><svg class="icon" aria-hidden="true"><use href="#icon-route" /></svg> Journey Details</div>
                   <div class="preview-grid">
                     <label>From Station <b>CNB</b></label>
                     <label>To Station <b>NDLS</b></label>
@@ -108,24 +135,24 @@
                   <div class="preview-pills"><span>Sleeper (SL)</span><span>TATKAL</span></div>
                 </div>
                 <div class="preview-card passenger-preview">
-                  <div class="preview-heading"><span>○</span> Passenger 1</div>
+                  <div class="preview-heading"><svg class="icon" aria-hidden="true"><use href="#icon-user" /></svg> Passenger 1</div>
                   <div class="passenger-name">Passenger details ready</div>
                   <div class="passenger-options"><span>Age</span><span>Gender</span><span>Berth</span></div>
                 </div>
               </div>
               <div class="extension-footer">
-                <button type="button" tabindex="-1">▣ Save</button>
-                <button type="button" tabindex="-1">↻ Reset</button>
-                <button class="book-preview" type="button" tabindex="-1">ϟ Book</button>
+                <button type="button" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#icon-save" /></svg> Save</button>
+                <button type="button" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#icon-refresh" /></svg> Reset</button>
+                <button class="book-preview" type="button" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#icon-zap" /></svg> Book</button>
               </div>
             </div>
-            <div class="speed-chip"><span>ϟ</span><strong>One guided flow</strong><small>From search to review</small></div>
+            <div class="speed-chip"><span><svg class="icon" aria-hidden="true"><use href="#icon-zap" /></svg></span><strong>One guided flow</strong><small>From search to review</small></div>
           </div>
         </div>
 
         <div class="container trust-row reveal" aria-label="Product highlights">
           <div><strong>5</strong><span>Passengers supported</span></div>
-          <div><strong>MV3</strong><span>Modern Chrome extension</span></div>
+          <div><strong>MV3</strong><span>Modern Chrome &amp; Edge extension</span></div>
           <div><strong>Local</strong><span>Saved details stay in extension storage</span></div>
           <div><strong>Manual</strong><span>CAPTCHA, review &amp; payment</span></div>
         </div>
@@ -141,47 +168,47 @@
 
           <div class="feature-grid">
             <article class="feature-card feature-card-large reveal">
-              <div class="feature-icon">ϟ</div>
+              <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-zap" /></svg></div>
               <span class="feature-number">01</span>
               <h3>Fast passenger autofill</h3>
               <p>Fill saved passenger names, ages, genders and berth preferences on the supported passenger page.</p>
               <div class="passenger-stack" aria-hidden="true">
-                <div><span>HS</span><p><b>Passenger 1</b><small>Details ready</small></p><i>✓</i></div>
-                <div><span>AK</span><p><b>Passenger 2</b><small>Details ready</small></p><i>✓</i></div>
-                <div><span>RS</span><p><b>Passenger 3</b><small>Details ready</small></p><i>✓</i></div>
+                <div><span><svg class="icon" aria-hidden="true"><use href="#icon-user" /></svg></span><p><b>Passenger 1</b><small>Details ready</small></p><i><svg class="icon" aria-hidden="true"><use href="#icon-check" /></svg></i></div>
+                <div><span><svg class="icon" aria-hidden="true"><use href="#icon-user" /></svg></span><p><b>Passenger 2</b><small>Details ready</small></p><i><svg class="icon" aria-hidden="true"><use href="#icon-check" /></svg></i></div>
+                <div><span><svg class="icon" aria-hidden="true"><use href="#icon-user" /></svg></span><p><b>Passenger 3</b><small>Details ready</small></p><i><svg class="icon" aria-hidden="true"><use href="#icon-check" /></svg></i></div>
               </div>
             </article>
 
             <article class="feature-card reveal">
-              <div class="feature-icon">↺</div>
+              <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-repeat" /></svg></div>
               <span class="feature-number">02</span>
               <h3>Save and reuse</h3>
               <p>Keep journey preferences and up to five passenger profiles available for your next booking attempt.</p>
             </article>
 
             <article class="feature-card reveal">
-              <div class="feature-icon">→</div>
+              <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right" /></svg></div>
               <span class="feature-number">03</span>
               <h3>One-click start</h3>
               <p>The guided workflow begins only when you press Book—not simply when an IRCTC page is refreshed.</p>
             </article>
 
             <article class="feature-card reveal">
-              <div class="feature-icon">⌁</div>
+              <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-sliders" /></svg></div>
               <span class="feature-number">04</span>
               <h3>Tatkal-ready details</h3>
               <p>Prepare station codes, journey date, train number, class, quota and payment preference in advance.</p>
             </article>
 
             <article class="feature-card reveal">
-              <div class="feature-icon">◇</div>
+              <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-box" /></svg></div>
               <span class="feature-number">05</span>
               <h3>Lightweight by design</h3>
               <p>A focused Manifest V3 extension with no separate account, dashboard or server required.</p>
             </article>
 
             <article class="feature-card reveal">
-              <div class="feature-icon">✓</div>
+              <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield-check" /></svg></div>
               <span class="feature-number">06</span>
               <h3>Privacy by design</h3>
               <p>Your saved booking details stay in your browser and are not sent to a separate TatkalFill server.</p>
@@ -195,39 +222,39 @@
           <div class="section-heading section-heading-light reveal">
             <span class="section-kicker">Manual installation</span>
             <h2>From download to ready<br />in six clear steps.</h2>
-            <p>TatkalFill is currently distributed as a ZIP and installed through Chrome Developer Mode.</p>
+            <p>TatkalFill is currently distributed as a ZIP and installed through Developer Mode in Chrome or Edge.</p>
           </div>
 
           <ol class="steps-grid">
             <li class="step-card reveal">
-              <span>01</span><div class="step-symbol">↓</div><h3>Download</h3>
+              <span>01</span><div class="step-symbol"><svg class="icon" aria-hidden="true"><use href="#icon-download" /></svg></div><h3>Download</h3>
               <p>Download the latest TatkalFill ZIP file from this website.</p>
             </li>
             <li class="step-card reveal">
-              <span>02</span><div class="step-symbol">□</div><h3>Extract</h3>
+              <span>02</span><div class="step-symbol"><svg class="icon" aria-hidden="true"><use href="#icon-archive" /></svg></div><h3>Extract</h3>
               <p>Extract the ZIP into a permanent folder on your computer.</p>
             </li>
             <li class="step-card reveal">
-              <span>03</span><div class="step-symbol">⌘</div><h3>Open Extensions</h3>
-              <p>Enter <code>chrome://extensions</code> in Chrome's address bar.</p>
+              <span>03</span><div class="step-symbol"><svg class="icon" aria-hidden="true"><use href="#icon-browser" /></svg></div><h3>Open Extensions</h3>
+              <p>Open <code>chrome://extensions</code> in Chrome or <code>edge://extensions</code> in Edge.</p>
             </li>
             <li class="step-card reveal">
-              <span>04</span><div class="step-symbol">●</div><h3>Developer Mode</h3>
+              <span>04</span><div class="step-symbol"><svg class="icon" aria-hidden="true"><use href="#icon-toggle" /></svg></div><h3>Developer Mode</h3>
               <p>Turn on the Developer Mode toggle in the upper-right corner.</p>
             </li>
             <li class="step-card reveal">
-              <span>05</span><div class="step-symbol">＋</div><h3>Load Unpacked</h3>
+              <span>05</span><div class="step-symbol"><svg class="icon" aria-hidden="true"><use href="#icon-folder-plus" /></svg></div><h3>Load Unpacked</h3>
               <p>Click Load unpacked and select the extracted extension folder.</p>
             </li>
             <li class="step-card reveal">
-              <span>06</span><div class="step-symbol">ϟ</div><h3>Start Using</h3>
+              <span>06</span><div class="step-symbol"><svg class="icon" aria-hidden="true"><use href="#icon-zap" /></svg></div><h3>Start Using</h3>
               <p>Pin TatkalFill to the toolbar and open it on supported IRCTC pages.</p>
             </li>
           </ol>
 
           <div class="install-callout reveal">
-            <div><strong>Important</strong><p>Keep the extracted folder in place. Removing it will make Chrome unable to load the extension.</p></div>
-            <a href="./downloads/TatkalFill.zip" download>Download ZIP <span>↓</span></a>
+            <div><strong>Important</strong><p>Keep the extracted folder in place. Removing it will make your browser unable to load the extension.</p></div>
+            <a href="./downloads/TatkalFill.zip" download>Download ZIP <svg class="icon" aria-hidden="true"><use href="#icon-download" /></svg></a>
           </div>
 
           <div class="use-workflow reveal">
@@ -250,21 +277,21 @@
       <section class="section control-section" id="privacy">
         <div class="container control-grid">
           <div class="control-visual reveal" aria-hidden="true">
-            <div class="shield-ring"><span>✓</span></div>
-            <div class="storage-card storage-card-one"><b>Journey details</b><small>Chrome local storage</small></div>
+            <div class="shield-ring"><span><svg class="icon" aria-hidden="true"><use href="#icon-shield-check" /></svg></span></div>
+            <div class="storage-card storage-card-one"><b>Journey details</b><small>Browser extension storage</small></div>
             <div class="storage-card storage-card-two"><b>Session password</b><small>Cleared with browser session</small></div>
           </div>
           <div class="control-copy reveal">
             <span class="section-kicker">Know where details live</span>
             <h2>Your booking stays under your control.</h2>
             <p>
-              TatkalFill uses Chrome extension storage for saved journey and passenger details. The IRCTC password is
-              placed in Chrome session storage and is cleared when the browser session ends.
+              TatkalFill uses browser extension storage for saved journey and passenger details. The IRCTC password is
+              placed in extension session storage and is cleared when the browser session ends.
             </p>
             <ul>
-              <li><span>✓</span> Autofill starts only after you press Book.</li>
-              <li><span>✓</span> Reset removes the details saved by the extension.</li>
-              <li><span>✓</span> CAPTCHA, OTP, final review and payment confirmation remain manual.</li>
+              <li><span><svg class="icon" aria-hidden="true"><use href="#icon-check" /></svg></span> Autofill starts only after you press Book.</li>
+              <li><span><svg class="icon" aria-hidden="true"><use href="#icon-check" /></svg></span> Reset removes the details saved by the extension.</li>
+              <li><span><svg class="icon" aria-hidden="true"><use href="#icon-check" /></svg></span> CAPTCHA, OTP, final review and payment confirmation remain manual.</li>
             </ul>
             <p class="implementation-note">These statements describe the current extension implementation, not a general security guarantee.</p>
           </div>
@@ -281,27 +308,27 @@
 
           <div class="faq-list reveal">
             <details open>
-              <summary>What is TatkalFill?<span>＋</span></summary>
-              <p>TatkalFill is a Chrome extension that saves booking preferences and assists with filling matching fields across supported IRCTC booking pages.</p>
+              <summary>What is TatkalFill?<span><svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg></span></summary>
+              <p>TatkalFill is a Chrome and Edge extension that saves booking preferences and assists with filling matching fields across supported IRCTC booking pages.</p>
             </details>
             <details>
-              <summary>How do I install TatkalFill?<span>＋</span></summary>
-              <p>Download and extract the ZIP, open <code>chrome://extensions</code>, enable Developer Mode, choose Load unpacked and select the extracted extension folder.</p>
+              <summary>How do I install TatkalFill?<span><svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg></span></summary>
+              <p>Download and extract the ZIP, open <code>chrome://extensions</code> or <code>edge://extensions</code>, enable Developer Mode, choose Load unpacked and select the extracted extension folder.</p>
             </details>
             <details>
-              <summary>Do I need Chrome Developer Mode?<span>＋</span></summary>
-              <p>Yes. This release is installed manually and currently requires Chrome Developer Mode.</p>
+              <summary>Do I need Developer Mode?<span><svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg></span></summary>
+              <p>Yes. This release is installed manually and currently requires Developer Mode in Chrome or Edge.</p>
             </details>
             <details>
-              <summary>Where are my saved details stored?<span>＋</span></summary>
-              <p>Journey and passenger information is saved using Chrome's local extension storage. The password is kept in Chrome session storage and cleared when the browser session ends.</p>
+              <summary>Where are my saved details stored?<span><svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg></span></summary>
+              <p>Journey and passenger information is saved using local browser extension storage. The password is kept in extension session storage and cleared when the browser session ends.</p>
             </details>
             <details>
-              <summary>How do I update the extension?<span>＋</span></summary>
-              <p>Download and extract the newest ZIP over a fresh folder, then use the Reload button for TatkalFill on <code>chrome://extensions</code>. Confirm your saved details before booking.</p>
+              <summary>How do I update the extension?<span><svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg></span></summary>
+              <p>Download and extract the newest ZIP into a fresh folder, then use Reload for TatkalFill on your browser's extensions page. Confirm your saved details before booking.</p>
             </details>
             <details>
-              <summary>Is TatkalFill an official IRCTC product?<span>＋</span></summary>
+              <summary>Is TatkalFill an official IRCTC product?<span><svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg></span></summary>
               <p>No. TatkalFill is an independent third-party extension and is not affiliated with or officially endorsed by IRCTC.</p>
             </details>
           </div>
@@ -312,10 +339,10 @@
         <div class="container download-card reveal">
           <div class="download-copy">
             <img src="./images/logo.png" alt="TatkalFill train icon" width="72" height="72" />
-            <div><span>Version 3.0.6</span><h2>Ready to make booking preparation simpler?</h2><p>Download TatkalFill and install it manually in Chrome.</p></div>
+            <div><span>Version 3.0.6</span><h2>Ready to make booking preparation simpler?</h2><p>Download TatkalFill and install it manually in Chrome or Edge.</p></div>
           </div>
           <a class="button button-download" href="./downloads/TatkalFill.zip" download>
-            <span aria-hidden="true">↓</span><span><b>Download TatkalFill</b><small>ZIP package</small></span>
+            <svg class="icon" aria-hidden="true"><use href="#icon-download" /></svg><span><b>Download TatkalFill</b><small>ZIP package</small></span>
           </a>
         </div>
       </section>

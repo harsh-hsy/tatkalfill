@@ -48,6 +48,24 @@ img {
   max-width: 100%;
 }
 
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -371,6 +389,42 @@ select {
   font-weight: 600;
 }
 
+.browser-support {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.browser-support > span {
+  margin-right: 2px;
+  font-weight: 650;
+}
+
+.browser-support strong {
+  min-height: 34px;
+  padding: 7px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 5px 14px rgba(20, 54, 111, 0.05);
+}
+
+.browser-support strong:first-of-type .icon {
+  color: #2f74d8;
+}
+
+.browser-support strong:last-of-type .icon {
+  color: #0aa5a8;
+}
+
 .status-dot {
   width: 8px;
   height: 8px;
@@ -476,6 +530,11 @@ select {
   color: var(--white);
 }
 
+.extension-time .icon {
+  width: 13px;
+  height: 13px;
+}
+
 .extension-body {
   padding: 15px;
 }
@@ -499,7 +558,9 @@ select {
   font-weight: 800;
 }
 
-.preview-heading span {
+.preview-heading > .icon {
+  width: 15px;
+  height: 15px;
   color: var(--blue-bright);
 }
 
@@ -566,12 +627,21 @@ select {
 
 .extension-footer button {
   min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   border: 0;
   border-radius: 9px;
   color: var(--white);
   background: #2f6dca;
   font-size: 11px;
   font-weight: 750;
+}
+
+.extension-footer button .icon {
+  width: 14px;
+  height: 14px;
 }
 
 .extension-footer button:nth-child(2) {
@@ -606,6 +676,11 @@ select {
   border-radius: 9px;
   color: var(--white);
   background: var(--orange);
+}
+
+.speed-chip > span .icon {
+  width: 15px;
+  height: 15px;
 }
 
 .speed-chip strong,
@@ -742,6 +817,11 @@ select {
   font-weight: 800;
 }
 
+.feature-icon .icon {
+  width: 22px;
+  height: 22px;
+}
+
 .feature-card-large .feature-icon {
   border-color: rgba(255, 255, 255, 0.14);
   color: var(--navy-deep);
@@ -821,6 +901,11 @@ select {
   font-weight: 800;
 }
 
+.passenger-stack > div > span .icon {
+  width: 17px;
+  height: 17px;
+}
+
 .passenger-stack p {
   margin: 0;
   display: grid;
@@ -845,6 +930,12 @@ select {
   background: #22aa6d;
   font-size: 10px;
   font-style: normal;
+}
+
+.passenger-stack i .icon {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.5;
 }
 
 .steps-section {
@@ -929,6 +1020,11 @@ select {
   font-weight: 900;
 }
 
+.step-symbol .icon {
+  width: 21px;
+  height: 21px;
+}
+
 .step-card h3 {
   margin: 28px 0 8px;
   font-size: 19px;
@@ -984,6 +1080,9 @@ select {
 .install-callout a {
   flex: 0 0 auto;
   padding: 12px 17px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   border-radius: 10px;
   color: var(--navy-deep);
   background: var(--gold);
@@ -1109,6 +1208,12 @@ select {
   font-weight: 800;
 }
 
+.shield-ring span .icon {
+  width: 54px;
+  height: 54px;
+  stroke-width: 1.6;
+}
+
 .storage-card {
   position: absolute;
   min-width: 190px;
@@ -1177,6 +1282,12 @@ select {
   font-size: 10px;
 }
 
+.control-copy li span .icon {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.5;
+}
+
 .control-copy .implementation-note {
   margin-top: 24px;
   padding: 11px 13px;
@@ -1242,6 +1353,11 @@ select {
   color: var(--blue);
   background: var(--sky);
   transition: transform 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.faq-list summary span .icon {
+  width: 15px;
+  height: 15px;
 }
 
 .faq-list details[open] summary span {
