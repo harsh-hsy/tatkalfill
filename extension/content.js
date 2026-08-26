@@ -657,7 +657,10 @@
         continueButton.scrollIntoView({ behavior: "smooth", block: "center" });
         showNotice("Passenger and payment details filled. Opening review…");
         continueButton.click();
-        const moved = await waitFor(() => getStage() === "review" ? true : null, 20000);
+        // IRCTC can keep the passenger page loader active for 30 seconds or
+        // longer while preparing Review Booking. Do not report a false error
+        // during that normal server-side transition.
+        const moved = await waitFor(() => getStage() === "review" ? true : null, 60000);
         if (!moved) showNotice("IRCTC did not open Review Booking. Check the visible validation message and press Continue manually.", true);
       } else if (stage === "review") {
         await markStage(bookingSession, stage, true);
