@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://harsh-hsy.github.io/tatkalfill/sitemap.xml

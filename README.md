@@ -46,6 +46,8 @@ Refreshing an already completed page does not run autofill again. A new workflow
 
 The landing page is a dependency-free static website. Open `website/index.html` directly or serve `website/` with any static HTTP server.
 
+The production website is prepared for GitHub Pages at `https://harsh-hsy.github.io/tatkalfill/`. Changes inside `website/` are deployed by the `Deploy website to GitHub Pages` workflow after GitHub Pages is configured to use **GitHub Actions** as its source.
+
 ## Automatic download package
 
 When a change inside `extension/` is pushed to `main`, the `Build latest extension download` GitHub Actions workflow packages the extension contents and replaces the `TatkalFill.zip` asset in the rolling `tatkalfill-latest` release. Every website download button uses that stable release URL, so no website edit is required for future extension updates.
