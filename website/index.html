@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#17366f" />
+    <meta
+      name="description"
+      content="TatkalFill helps you save and autofill IRCTC journey and passenger details through a guided browser workflow."
+    />
+    <meta property="og:title" content="TatkalFill — Fast. Simple. Ready to Book." />
+    <meta
+      property="og:description"
+      content="A lightweight Chrome extension for faster IRCTC Tatkal booking preparation."
+    />
+    <meta property="og:type" content="website" />
+    <title>TatkalFill — Fast. Simple. Ready to Book.</title>
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="container nav-shell">
+        <a class="brand" href="#top" aria-label="TatkalFill home">
+          <img src="./images/logo.png" alt="" width="44" height="44" />
+          <span class="brand-copy">
+            <strong>TatkalFill</strong>
+            <small>Fast. Simple. Ready to Book.</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          data-menu-toggle
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation" data-nav>
+          <a href="#features">Features</a>
+          <a href="#how-to-use">How to use</a>
+          <a href="#faq">FAQ</a>
+          <a class="nav-download" href="./downloads/TatkalFill.zip" download>Download</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow"><span></span> Chrome extension for IRCTC booking preparation</div>
+            <h1>Be ready when every <em>second</em> matters.</h1>
+            <p class="hero-tagline">Fast. Simple. Ready to Book.</p>
+            <p class="hero-description">
+              TatkalFill keeps your journey and passenger details ready, then assists with filling the
+              matching fields across supported IRCTC booking pages—only when you press Book.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="./downloads/TatkalFill.zip" download>
+                <span aria-hidden="true">↓</span> Download Extension
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://github.com/harsh-hsy/tatkalfill"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="hero-note">
+              <span class="status-dot" aria-hidden="true"></span>
+              Currently installed manually through Chrome Developer Mode
+            </div>
+          </div>
+
+          <div class="product-stage reveal reveal-delay" aria-label="TatkalFill extension preview">
+            <div class="orbit orbit-one" aria-hidden="true"></div>
+            <div class="orbit orbit-two" aria-hidden="true"></div>
+            <div class="extension-window">
+              <div class="extension-topbar">
+                <div class="extension-brand">
+                  <img src="./images/logo.png" alt="" width="38" height="38" />
+                  <span><strong>TatkalFill</strong><small>Fast. Simple. Ready to Book.</small></span>
+                </div>
+                <div class="extension-time">10:00:00 <span>↻</span></div>
+              </div>
+              <div class="extension-body">
+                <div class="preview-card">
+                  <div class="preview-heading"><span>↗</span> Journey Details</div>
+                  <div class="preview-grid">
+                    <label>From Station <b>CNB</b></label>
+                    <label>To Station <b>NDLS</b></label>
+                    <label>Journey Date <b>30/08/2026</b></label>
+                    <label>Train Number <b>12451</b></label>
+                  </div>
+                  <div class="preview-pills"><span>Sleeper (SL)</span><span>TATKAL</span></div>
+                </div>
+                <div class="preview-card passenger-preview">
+                  <div class="preview-heading"><span>○</span> Passenger 1</div>
+                  <div class="passenger-name">Passenger details ready</div>
+                  <div class="passenger-options"><span>Age</span><span>Gender</span><span>Berth</span></div>
+                </div>
+              </div>
+              <div class="extension-footer">
+                <button type="button" tabindex="-1">▣ Save</button>
+                <button type="button" tabindex="-1">↻ Reset</button>
+                <button class="book-preview" type="button" tabindex="-1">ϟ Book</button>
+              </div>
+            </div>
+            <div class="speed-chip"><span>ϟ</span><strong>One guided flow</strong><small>From search to review</small></div>
+          </div>
+        </div>
+
+        <div class="container trust-row reveal" aria-label="Product highlights">
+          <div><strong>5</strong><span>Passengers supported</span></div>
+          <div><strong>MV3</strong><span>Modern Chrome extension</span></div>
+          <div><strong>Local</strong><span>Saved details stay in extension storage</span></div>
+          <div><strong>Manual</strong><span>CAPTCHA, review &amp; payment</span></div>
+        </div>
+      </section>
+
+      <section class="section features" id="features">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="section-kicker">Built for preparation</span>
+            <h2>Less repetitive typing.<br />More control over your flow.</h2>
+            <p>TatkalFill focuses on the details you enter repeatedly while keeping important confirmations in your hands.</p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card feature-card-large reveal">
+              <div class="feature-icon">ϟ</div>
+              <span class="feature-number">01</span>
+              <h3>Fast passenger autofill</h3>
+              <p>Fill saved passenger names, ages, genders and berth preferences on the supported passenger page.</p>
+              <div class="passenger-stack" aria-hidden="true">
+                <div><span>HS</span><p><b>Passenger 1</b><small>Details ready</small></p><i>✓</i></div>
+                <div><span>AK</span><p><b>Passenger 2</b><small>Details ready</small></p><i>✓</i></div>
+                <div><span>RS</span><p><b>Passenger 3</b><small>Details ready</small></p><i>✓</i></div>
+              </div>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">↺</div>
+              <span class="feature-number">02</span>
+              <h3>Save and reuse</h3>
+              <p>Keep journey preferences and up to five passenger profiles available for your next booking attempt.</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">→</div>
+              <span class="feature-number">03</span>
+              <h3>One-click start</h3>
+              <p>The guided workflow begins only when you press Book—not simply when an IRCTC page is refreshed.</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">⌁</div>
+              <span class="feature-number">04</span>
+              <h3>Tatkal-ready details</h3>
+              <p>Prepare station codes, journey date, train number, class, quota and payment preference in advance.</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <div class="feature-icon">◇</div>
+              <span class="feature-number">05</span>
+              <h3>Lightweight by design</h3>
+              <p>A focused Manifest V3 extension with no separate account, dashboard or server required.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section steps-section" id="how-to-use">
+        <div class="container">
+          <div class="section-heading section-heading-light reveal">
+            <span class="section-kicker">Manual installation</span>
+            <h2>From download to ready<br />in six clear steps.</h2>
+            <p>TatkalFill is currently distributed as a ZIP and installed through Chrome Developer Mode.</p>
+          </div>
+
+          <ol class="steps-grid">
+            <li class="step-card reveal">
+              <span>01</span><div class="step-symbol">↓</div><h3>Download</h3>
+              <p>Download the latest TatkalFill ZIP file from this website.</p>
+            </li>
+            <li class="step-card reveal">
+              <span>02</span><div class="step-symbol">□</div><h3>Extract</h3>
+              <p>Extract the ZIP into a permanent folder on your computer.</p>
+            </li>
+            <li class="step-card reveal">
+              <span>03</span><div class="step-symbol">⌘</div><h3>Open Extensions</h3>
+              <p>Enter <code>chrome://extensions</code> in Chrome's address bar.</p>
+            </li>
+            <li class="step-card reveal">
+              <span>04</span><div class="step-symbol">●</div><h3>Developer Mode</h3>
+              <p>Turn on the Developer Mode toggle in the upper-right corner.</p>
+            </li>
+            <li class="step-card reveal">
+              <span>05</span><div class="step-symbol">＋</div><h3>Load Unpacked</h3>
+              <p>Click Load unpacked and select the extracted extension folder.</p>
+            </li>
+            <li class="step-card reveal">
+              <span>06</span><div class="step-symbol">ϟ</div><h3>Start Using</h3>
+              <p>Pin TatkalFill to the toolbar and open it on supported IRCTC pages.</p>
+            </li>
+          </ol>
+
+          <div class="install-callout reveal">
+            <div><strong>Important</strong><p>Keep the extracted folder in place. Removing it will make Chrome unable to load the extension.</p></div>
+            <a href="./downloads/TatkalFill.zip" download>Download ZIP <span>↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section control-section" id="privacy">
+        <div class="container control-grid">
+          <div class="control-visual reveal" aria-hidden="true">
+            <div class="shield-ring"><span>✓</span></div>
+            <div class="storage-card storage-card-one"><b>Journey details</b><small>Chrome local storage</small></div>
+            <div class="storage-card storage-card-two"><b>Session password</b><small>Cleared with browser session</small></div>
+          </div>
+          <div class="control-copy reveal">
+            <span class="section-kicker">Know where details live</span>
+            <h2>Your booking stays under your control.</h2>
+            <p>
+              TatkalFill uses Chrome extension storage for saved journey and passenger details. The IRCTC password is
+              placed in Chrome session storage and is cleared when the browser session ends.
+            </p>
+            <ul>
+              <li><span>✓</span> Autofill starts only after you press Book.</li>
+              <li><span>✓</span> Reset removes the details saved by the extension.</li>
+              <li><span>✓</span> CAPTCHA, OTP, final review and payment confirmation remain manual.</li>
+            </ul>
+            <p class="implementation-note">These statements describe the current extension implementation, not a general security guarantee.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq">
+        <div class="container faq-grid">
+          <div class="section-heading reveal">
+            <span class="section-kicker">Questions, answered</span>
+            <h2>Everything you need before installing.</h2>
+            <p>Clear answers about setup, storage and what TatkalFill does—and does not—do.</p>
+          </div>
+
+          <div class="faq-list reveal">
+            <details open>
+              <summary>What is TatkalFill?<span>＋</span></summary>
+              <p>TatkalFill is a Chrome extension that saves booking preferences and assists with filling matching fields across supported IRCTC booking pages.</p>
+            </details>
+            <details>
+              <summary>How do I install TatkalFill?<span>＋</span></summary>
+              <p>Download and extract the ZIP, open <code>chrome://extensions</code>, enable Developer Mode, choose Load unpacked and select the extracted extension folder.</p>
+            </details>
+            <details>
+              <summary>Do I need Chrome Developer Mode?<span>＋</span></summary>
+              <p>Yes. This release is installed manually and currently requires Chrome Developer Mode.</p>
+            </details>
+            <details>
+              <summary>Where are my saved details stored?<span>＋</span></summary>
+              <p>Journey and passenger information is saved using Chrome's local extension storage. The password is kept in Chrome session storage and cleared when the browser session ends.</p>
+            </details>
+            <details>
+              <summary>How do I update the extension?<span>＋</span></summary>
+              <p>Download and extract the newest ZIP over a fresh folder, then use the Reload button for TatkalFill on <code>chrome://extensions</code>. Confirm your saved details before booking.</p>
+            </details>
+            <details>
+              <summary>Is TatkalFill an official IRCTC product?<span>＋</span></summary>
+              <p>No. TatkalFill is an independent third-party extension and is not affiliated with or officially endorsed by IRCTC.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="download-section" id="download">
+        <div class="container download-card reveal">
+          <div class="download-copy">
+            <img src="./images/logo.png" alt="TatkalFill train icon" width="72" height="72" />
+            <div><span>Version 3.0.3</span><h2>Ready to make booking preparation simpler?</h2><p>Download TatkalFill and install it manually in Chrome.</p></div>
+          </div>
+          <a class="button button-download" href="./downloads/TatkalFill.zip" download>
+            <span aria-hidden="true">↓</span><span><b>Download TatkalFill</b><small>ZIP package</small></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="disclaimer" aria-label="Product disclaimer">
+        <div class="container">
+          <strong>Independent project</strong>
+          <p>TatkalFill is not affiliated with, sponsored by, or officially endorsed by IRCTC or Indian Railways. Always verify all journey, passenger and payment details before continuing.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <a class="brand footer-brand" href="#top" aria-label="TatkalFill home">
+          <img src="./images/logo.png" alt="" width="42" height="42" />
+          <span class="brand-copy"><strong>TatkalFill</strong><small>Fast. Simple. Ready to Book.</small></span>
+        </a>
+        <nav aria-label="Footer navigation">
+          <a href="#features">Features</a>
+          <a href="#how-to-use">Install</a>
+          <a href="#privacy">Privacy information</a>
+          <a href="https://github.com/harsh-hsy/tatkalfill" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span data-year>2026</span> TatkalFill · Created by <a href="https://harsh-hsy.onrender.com/" target="_blank" rel="noopener noreferrer">Harsh Singh</a></p>
+        <p>Independent third-party browser extension</p>
+      </div>
+    </footer>
+  </body>
+</html>
