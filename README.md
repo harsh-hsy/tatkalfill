@@ -6,6 +6,8 @@ TatkalFill is an independent Chrome/Edge Manifest V3 extension that stores journ
 
 > TatkalFill is not affiliated with, sponsored by, or officially endorsed by IRCTC or Indian Railways. Always verify every filled field before continuing.
 
+**Live website:** [Open TatkalFill][live-website]
+
 ## Repository structure
 
 ```text
@@ -46,7 +48,7 @@ Refreshing an already completed page does not run autofill again. A new workflow
 
 The landing page is a dependency-free static website. Open `website/index.html` directly or serve `website/` with any static HTTP server.
 
-The production website is prepared for GitHub Pages at `https://harsh-hsy.github.io/tatkalfill/`. Changes inside `website/` are deployed by the `Deploy website to GitHub Pages` workflow after GitHub Pages is configured to use **GitHub Actions** as its source.
+The production website is available at [TatkalFill Live Website][live-website]. Changes inside `website/` are deployed by the `Deploy website to GitHub Pages` workflow after GitHub Pages is configured to use **GitHub Actions** as its source.
 
 ## Automatic download package
 
@@ -55,3 +57,5 @@ When a change inside `extension/` is pushed to `main`, the `Build latest extensi
 ## License
 
 Licensed under the [MIT License](./LICENSE).
+
+[live-website]: https://harsh-hsy.github.io/tatkalfill/
