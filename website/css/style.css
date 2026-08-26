@@ -417,14 +417,6 @@ select {
   box-shadow: 0 5px 14px rgba(20, 54, 111, 0.05);
 }
 
-.browser-support strong:first-of-type .icon {
-  color: #2f74d8;
-}
-
-.browser-support strong:last-of-type .icon {
-  color: #0aa5a8;
-}
-
 .status-dot {
   width: 8px;
   height: 8px;
