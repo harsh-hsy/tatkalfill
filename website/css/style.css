@@ -1510,6 +1510,10 @@ select {
     min-height: 540px;
   }
 
+  .feature-grid .feature-card:last-child {
+    grid-column: span 2;
+  }
+
   .steps-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1659,6 +1663,10 @@ select {
   .feature-card-large {
     grid-column: auto;
     min-height: 560px;
+  }
+
+  .feature-grid .feature-card:last-child {
+    grid-column: auto;
   }
 
   .feature-card-large h3 {
