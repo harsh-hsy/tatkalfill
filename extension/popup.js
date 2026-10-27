@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const passengerContainer = document.getElementById("passenger-details");
-  const passengerNumbers = [1, 2, 3, 4, 5];
+  const passengerNumbers = [1, 2, 3, 4, 5, 6];
   passengerContainer.innerHTML = passengerNumbers.map((number) => passengerTemplate(number)).join("");
 
   const journeyDateInput = document.getElementById("journeyDate");
